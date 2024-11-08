@@ -1,8 +1,12 @@
+import { useGlobalContext } from "../hooks/globalContext";
+
 function SearchForm() {
+  const { setSearchQuery } = useGlobalContext();
   function handleSubmit(e) {
     e.preventDefault();
     const searchedValue = e.target.elements.search.value;
-    console.log(searchedValue);
+    if (!searchedValue) return;
+    setSearchQuery(searchedValue);
   }
   return (
     <section>
