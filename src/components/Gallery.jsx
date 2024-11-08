@@ -19,7 +19,6 @@ function Gallery() {
       return res.data;
     },
   });
-  console.log(images);
   if (isPending) {
     return (
       <section className="image-container">
